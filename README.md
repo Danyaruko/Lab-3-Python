@@ -1,5 +1,5 @@
 # Lab-3-Python
- 
+  
 In order to have this program work, you must download a zip version of repository and unpack it to any location convenient for you.
 To run the program open command line terminal, change directory to aforementioned repository and type in "py main.py".
 
