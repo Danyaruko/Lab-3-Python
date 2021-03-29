@@ -40,12 +40,12 @@ list_of_goods.append(Boksik)
 list_of_goods.append(Lukoshko)
 print(list_of_goods)
 
-Serega = ShopManager()
-Serega.sort_by_weight(list_of_goods, order= SortOrder.DESCENDING)
+Serega = ShopManager(list_of_goods)
+Serega.sort_by_weight( order= SortOrder.DESCENDING)
 
 print(list_of_goods)
 
-Serega.sort_by_colour(list_of_goods, order= SortOrder.ASCENDING)
+Serega.sort_by_colour( order= SortOrder.ASCENDING)
 
 print(list_of_goods)
 
