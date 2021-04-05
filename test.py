@@ -52,9 +52,69 @@ class TestFoodStorageGoods(unittest.TestCase):
         [self.Boksik_the_Lunchbox])
         
     def test_str(self):
-        self.assertEqual(str(self.Bertha_the_Barrel), "Size: 200 l\nWeight: 15000 g\nPrice: 500 UAH\nColour: BLUE\nManufactured in: BULGARIA\nMaterial: WOOD\nUtility: DECORATIVE\nHoop material: METAL\n")
-        
+        expected_str_basket=f"Size: 20 l\n"\
+                            f"Weight: 500 g\n"\
+                            f"Price: 100 UAH\n"\
+                            f"Colour: WOOD\n"\
+                            f"Manufactured in: RUSSIA\n"\
+                            f"Material: WOOD_BARK\n"\
+                            f"Utility: OUTDOOR_ALLOWED\n"\
+                            f"Number of handles: 2\n"
+        expected_str_barrel=f"Size: 200 l\n"\
+                            f"Weight: 15000 g\n"\
+                            f"Price: 500 UAH\n"\
+                            f"Colour: BLUE\n"\
+                            f"Manufactured in: BULGARIA\n"\
+                            f"Material: WOOD\n"\
+                            f"Utility: DECORATIVE\n"\
+                            f"Hoop material: METAL\n"
+        expected_str_lunchbox=f"Size: 2 l\n"\
+                              f"Weight: 200 g\n"\
+                              f"Price: 80 UAH\n"\
+                              f"Colour: RED\n"\
+                              f"Manufactured in: WESTERN_SAHARA\n"\
+                              f"Material: PLASTIC\n"\
+                              f"Number of sections: 4\n"\
+                              f"Print on the top: Dinosaur\n"
+        self.assertEqual(str(self.Bertha_the_Barrel), expected_str_barrel)
+        self.assertEqual(str(self.Boksik_the_Lunchbox), expected_str_lunchbox)
+        self.assertEqual(str(self.Lukoshko_the_Basket), expected_str_basket)
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_repr(self):
+        expected_list=f"[Size: 2 l\n"\
+                      f"Weight: 200 g\n"\
+                      f"Price: 80 UAH\n"\
+                      f"Colour: RED\n"\
+                      f"Manufactured in: WESTERN_SAHARA\n"\
+                      f"Material: PLASTIC\n"\
+                      f"Number of sections: 4\n"\
+                      f"Print on the top: Dinosaur\n"\
+                      f", Size: 200 l\n"\
+                      f"Weight: 15000 g\n"\
+                      f"Price: 500 UAH\n"\
+                      f"Colour: BLUE\n"\
+                      f"Manufactured in: BULGARIA\n"\
+                      f"Material: WOOD\n"\
+                      f"Utility: DECORATIVE\n"\
+                      f"Hoop material: METAL\n"\
+                      f", Size: 0.5 l\n"\
+                      f"Weight: 400 g\n"\
+                      f"Price: 100 UAH\n"\
+                      f"Colour: SILVER\n"\
+                      f"Manufactured in: SWEDEN\n"\
+                      f"Material: METAL\n"\
+                      f"Number of sections: 2\n"\
+                      f"Print on the top: Dinosaur\n"\
+                      f", Size: 20 l\n"\
+                      f"Weight: 500 g\n"\
+                      f"Price: 100 UAH\n"\
+                      f"Colour: WOOD\n"\
+                      f"Manufactured in: RUSSIA\n"\
+                      f"Material: WOOD_BARK\n"\
+                      f"Utility: OUTDOOR_ALLOWED\n"\
+                      f"Number of handles: 2\n"\
+                      f"]"    
+        self.assertEqual(repr(self.Serega_the_Shop_Manager.sort_by_colour(SortOrder.ASCENDING)), expected_list) 
+
+
     
