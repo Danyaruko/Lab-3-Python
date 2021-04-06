@@ -51,7 +51,7 @@ class TestFoodStorageGoods(unittest.TestCase):
         self.assertEqual(self.Serega_the_Shop_Manager.search_by_material(self.material),
         [self.Boksik_the_Lunchbox])
         
-    def test_str(self):
+    def test_str_basket(self):
         expected_str_basket=f"Size: 20 l\n"\
                             f"Weight: 500 g\n"\
                             f"Price: 100 UAH\n"\
@@ -60,6 +60,9 @@ class TestFoodStorageGoods(unittest.TestCase):
                             f"Material: WOOD_BARK\n"\
                             f"Utility: OUTDOOR_ALLOWED\n"\
                             f"Number of handles: 2\n"
+        self.assertEqual(str(self.Lukoshko_the_Basket), expected_str_basket)
+    
+    def test_str_barrel(self):
         expected_str_barrel=f"Size: 200 l\n"\
                             f"Weight: 15000 g\n"\
                             f"Price: 500 UAH\n"\
@@ -68,6 +71,9 @@ class TestFoodStorageGoods(unittest.TestCase):
                             f"Material: WOOD\n"\
                             f"Utility: DECORATIVE\n"\
                             f"Hoop material: METAL\n"
+        self.assertEqual(str(self.Bertha_the_Barrel), expected_str_barrel)
+
+    def test_str_lunchbox(self):
         expected_str_lunchbox=f"Size: 2 l\n"\
                               f"Weight: 200 g\n"\
                               f"Price: 80 UAH\n"\
@@ -76,9 +82,8 @@ class TestFoodStorageGoods(unittest.TestCase):
                               f"Material: PLASTIC\n"\
                               f"Number of sections: 4\n"\
                               f"Print on the top: Dinosaur\n"
-        self.assertEqual(str(self.Bertha_the_Barrel), expected_str_barrel)
         self.assertEqual(str(self.Boksik_the_Lunchbox), expected_str_lunchbox)
-        self.assertEqual(str(self.Lukoshko_the_Basket), expected_str_basket)
+
 
     def test_repr(self):
         expected_list=f"[Size: 2 l\n"\
